@@ -16,15 +16,23 @@ app.use(cors());
 // );
 
  
-app.use(cors({
-  origin: "https://slug-panel.onrender.com",
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "*",
-    "Access-Control-Allow-Headers": "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'",
-  },
-  credentials: true
-}));
+// app.use(cors({
+//   origin: "https://slug-panel.onrender.com",
+//   headers: {
+//     "Access-Control-Allow-Origin": "*",
+//     "Access-Control-Allow-Methods": "*",
+//     "Access-Control-Allow-Headers": "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'",
+//   },
+//   credentials: true
+// }));
+
+app.use(function (request, response, next) {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 
 // parse requests of content-type - application/json
 app.use(express.json());
