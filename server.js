@@ -19,8 +19,9 @@ app.use(cors());
 app.use(cors({
   origin: "https://slug-panel.onrender.com",
   headers: {
-      "Access-Control-Allow-Origin": "https://slug-panel.onrender.com", // incorrect
-      "Access-Control-Allow-Credentials": true // incorrect
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "*",
+    "Access-Control-Allow-Headers": "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'",
   },
   credentials: true
 }));
