@@ -29,6 +29,10 @@ app.use(cors());
 app.use(function (request, response, next) {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  response.header("Access-Control-Allow-Origin: http://localhost:4200");
+  response.header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+  response.header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
   next();
 });
 
