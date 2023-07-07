@@ -15,6 +15,16 @@ app.use(cors());
 //   })
 // );
 
+ 
+app.use(cors({
+  origin: "https://slug-panel.onrender.com",
+  headers: {
+      "Access-Control-Allow-Origin": "https://slug-panel.onrender.com", // incorrect
+      "Access-Control-Allow-Credentials": true // incorrect
+  },
+  credentials: true
+}));
+
 // parse requests of content-type - application/json
 app.use(express.json());
 
