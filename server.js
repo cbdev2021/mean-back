@@ -16,21 +16,21 @@ const app = express();
 //   })
 // );
 
-app.use(
-   cors({
-     credentials: true,
-     //origin: ["http://localhost:4200","https://mean-back-5ksf.onrender.com"],
-     //origin:'https://mean-back-5ksf.onrender.com'
-     origin:'http://localhost:4200'
-     //
-   })
-);
+// app.use(
+//    cors({
+//      credentials: true,
+//      //origin: ["http://localhost:4200","https://mean-back-5ksf.onrender.com"],
+//      //origin:'https://mean-back-5ksf.onrender.com'
+//      origin:'http://localhost:4200'
+//      //
+//    })
+// );
  
-// const corsConfig = {
-//   credentials: true,
-//   origin: true,
-// };
-// app.use(cors(corsConfig));
+const corsConfig = {
+  credentials: true,
+  origin: true,
+};
+app.use(cors(corsConfig));
 
 // app.use(function(req, res, next) {
 //   // res.header("Access-Control-Allow-Origin", "*");
