@@ -21,7 +21,7 @@ app.use(
      credentials: true,
      //origin: ["http://localhost:4200"],
      //origin: '*'
-     origin: "https://slug-panel.onrender.com"
+     origin: "https://mean-back-5ksf.onrender.com"
    })
 );
  
