@@ -16,13 +16,14 @@ const app = express();
 //   })
 // );
 
-// app.use(
-//    cors({
-//      credentials: true,
-//      //origin: ["http://localhost:4200"],
-//      origin: '*'
-//    })
-// );
+app.use(
+   cors({
+     credentials: true,
+     //origin: ["http://localhost:4200"],
+     //origin: '*'
+     origin: "https://slug-panel.onrender.com"
+   })
+);
  
 // const corsConfig = {
 //   credentials: true,
@@ -30,18 +31,18 @@ const app = express();
 // };
 // app.use(cors(corsConfig));
 
-app.use(function(req, res, next) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  const allowedOrigins = ['http://localhost:4200', 'http://gamebrag.onrender.com', 'https://gamebrag.onrender.com'];
-  const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
-       res.setHeader('Access-Control-Allow-Origin', origin);
-  }
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-  res.header("Access-Control-Allow-credentials", true);
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
-  next();
-});
+// app.use(function(req, res, next) {
+//   // res.header("Access-Control-Allow-Origin", "*");
+//   const allowedOrigins = ['http://localhost:4200', 'http://gamebrag.onrender.com', 'https://gamebrag.onrender.com'];
+//   const origin = req.headers.origin;
+//   if (allowedOrigins.includes(origin)) {
+//        res.setHeader('Access-Control-Allow-Origin', origin);
+//   }
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+//   res.header("Access-Control-Allow-credentials", true);
+//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, UPDATE");
+//   next();
+// });
 
 
 // parse requests of content-type - application/json
