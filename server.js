@@ -16,6 +16,13 @@ const app = express();
 //   })
 // );
 
+ app.use(
+   cors({
+     credentials: true,
+     origin:'http://localhost:4200'
+   })
+ );
+
 // app.use(
 //    cors({
 //      credentials: true,
@@ -26,11 +33,11 @@ const app = express();
 //    })
 // );
  
-const corsConfig = {
-  credentials: true,
-  origin: true,
-};
-app.use(cors(corsConfig));
+// const corsConfig = {
+//   credentials: true,
+//   origin: true,
+// };
+// app.use(cors(corsConfig));
 
 // app.use(function(req, res, next) {
 //   // res.header("Access-Control-Allow-Origin", "*");
